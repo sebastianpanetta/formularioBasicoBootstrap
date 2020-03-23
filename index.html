@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Sebastian Panetta">
+
+    <title>Formulario básico</title>
+
+    <!-- agregado de icono para la pestaña del formulario -->
+    <link rel="icon" href="ico/favicon.ico">
+    <!-- agregado de bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- agregado de font awesome por CDN-->
+    <script src="https://kit.fontawesome.com/ee29af390e.js" crossorigin="anonymous" defer></script>
+    <!-- agregado de jquery y bootstrap.js por CDN-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" defer></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" defer></script>
+    <!-- agregado de js locales -->
+    <script src="js/hideFields.js" defer></script>
+    <script src="js/dataValidator.js" defer></script>
+</head>
+
+<body class="bg-light">
+    <div class="container">
+        <div class="row" style="margin-top: 40px;">
+            <div class="col-md-8">
+                <form class="needs-validation" novalidate>
+                    <div class="row">
+
+                        <div class="form-group col-md-6 mb-3">
+                            <label for="user_firstname">Nombre</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-address-book"
+                                            style="color: blue;"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="user_firstname" placeholder="Nombre"
+                                    required>
+                                <div class="invalid-feedback" style="width: 100%;">
+                                    Por favor complete su nombre
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="user_surname">Apellido</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-address-book"
+                                            style="color: blue;"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="user_surname" placeholder="Apellido"
+                                    required>
+                                <div class="invalid-feedback" style="width: 100%;">
+                                    Por favor complete su apellido
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="user_identification">DNI</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-id-card" style="color:blue"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="user_identification"
+                                placeholder="Ingrese su DNI" required>
+                        </div>
+                        <div id="dni-result"></div>
+                    </div>
+
+                    <div class="mb-3" id="provincia">
+                        <label for="provincia_select">Provincia</label>
+                        <select class="custom-select d-block w-100" id="provincia_select" required>
+                            <option value="">Elija una provincia</option>
+                            <option value="CABA">CABA</option>
+                            <option value="Buenos Aires">Bs. As.</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor seleccione una provincia
+                        </div>
+                    </div>
+
+                    <div class="mb-3" id="localidad">
+                        <label for="localidad_select">Localidad</label>
+                        <select class="custom-select d-block w-100" id="localidad_select" required>
+                            <option value="">Elija una localidad</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor seleccione una localidad
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="user_email">Email</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-at" style="color:blue"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="user_email" placeholder="Ingrese su e-mail"
+                                required>
+                        </div>
+                        <div id="mail-result"></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="user_phone">Teléfono</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-phone" style="color:blue"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="user_phone" placeholder="Ingrese su teléfono"
+                                required>
+                        </div>
+                        <div id="tel-result"></div>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="terminos_y_condiciones">
+                        <label class="custom-control-label" for="terminos_y_condiciones">
+                            Aceptar <a href="#">Terminos y Condiciones</a></label>
+                    </div>
+                    <div id="terms-result"></div>
+                    <div style="margin-top: 15px;">
+                        <button class="btn btn-primary btn-lg" type="submit" id="validar">Enviar Registro</button>
+                    </div>
+                    <hr style="opacity: 0%;" />
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
